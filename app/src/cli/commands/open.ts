@@ -8,7 +8,7 @@ import { parseRemote } from '../../lib/remote-parsing'
 const command: ICommandModule = {
   command: 'open <path>',
   aliases: ['<path>'],
-  description: 'Open a git repository in GitHub Desktop',
+  description: 'Open a git repository in GitLab (wrk)',
   args: [
     {
       name: 'path',
