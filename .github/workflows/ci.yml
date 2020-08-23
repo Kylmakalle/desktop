@@ -57,6 +57,8 @@ jobs:
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
           DESKTOPBOT_TOKEN: ${{ secrets.DESKTOPBOT_TOKEN }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+      - name: List artiffacts
+        run: ls -l ${{ env.REPO_NAME }}/dist/GitLab\ (wrk)-darwin-x64/
       - uses: actions/upload-artifact@master
         name: Upload artifact.
         with:
