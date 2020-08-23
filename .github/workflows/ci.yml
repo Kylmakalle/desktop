@@ -63,5 +63,5 @@ jobs:
       - uses: actions/upload-artifact@master
         name: Upload artifact.
         with:
-          name: Gitlab\ \(wrk\).app
+          name: Gitlab (wrk).app
           path: dist/GitLab\ \(wrk\)-darwin-x64/
