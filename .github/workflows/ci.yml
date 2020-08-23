@@ -55,7 +55,6 @@ jobs:
           DESKTOPBOT_TOKEN: ${{ secrets.DESKTOPBOT_TOKEN }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
       - uses: actions/upload-artifact@master
-        if: env.UPLOAD_ARTIFACT == 'true'
         name: Upload artifact.
         with:
           name: Gitlab (wrk).app
