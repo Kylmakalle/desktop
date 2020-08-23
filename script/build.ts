@@ -211,7 +211,7 @@ function packageApp() {
           !isDevelopmentBuild
             ? 'x-github-desktop-auth'
             : 'x-github-desktop-dev-auth',
-          'x-github-client',
+          'x-gitlab-wrk-client',
           'github-mac',
         ],
       },

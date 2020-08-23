@@ -13,7 +13,7 @@ describe('parseAppURL', () => {
   describe('oauth', () => {
     it('returns right name', () => {
       const result = parseAppURL(
-        'x-github-client://oauth?code=18142422&state=e4cd2dea-1567-46aa-8eb2-c7f56e943187'
+        'x-gitlab-wrk-client://oauth?code=18142422&state=e4cd2dea-1567-46aa-8eb2-c7f56e943187'
       )
       expect(result.name).toBe('oauth')
 
@@ -162,7 +162,7 @@ describe('parseAppURL', () => {
         ? 'C:\\Users\\johnsmith\\repo'
         : '/Users/johnsmith/repo'
       const result = parseAppURL(
-        `x-github-client://openLocalRepo/${encodeURIComponent(path)}`
+        `x-gitlab-wrk-client://openLocalRepo/${encodeURIComponent(path)}`
       )
       expect(result.name).toBe('open-repository-from-path')
 
@@ -171,10 +171,10 @@ describe('parseAppURL', () => {
     })
 
     it('deals with not having a local path', () => {
-      let result = parseAppURL(`x-github-client://openLocalRepo/`)
+      let result = parseAppURL(`x-gitlab-wrk-client://openLocalRepo/`)
       expect(result.name).toBe('unknown')
 
-      result = parseAppURL(`x-github-client://openLocalRepo`)
+      result = parseAppURL(`x-gitlab-wrk-client://openLocalRepo`)
       expect(result.name).toBe('unknown')
     })
   })
