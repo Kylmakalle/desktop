@@ -60,7 +60,7 @@ jobs:
       # - name: List artiffacts
       #   run: ls -l && ls -l dist && ls -l ${{ env.REPO_NAME }}/dist 
       #   #run: ls -l ${{ env.REPO_NAME }}/dist/GitLab\ \(wrk\)-darwin-x64/
-      - uses: actions/upload-artifact@master
+      - uses: actions/upload-artifact@v2
         name: Upload artifact.
         with:
           name: Gitlab (wrk).app
