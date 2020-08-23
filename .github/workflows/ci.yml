@@ -58,7 +58,7 @@ jobs:
           DESKTOPBOT_TOKEN: ${{ secrets.DESKTOPBOT_TOKEN }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
       - name: List artifacts
-        run: ls -l dist/GitLab\ \(wrk\)-darwin-x64/
+        run: ls -l dist/GitLab\ \(wrk\)-darwin-x64/GitLab (wrk).app
       - uses: actions/upload-artifact@v2
         name: Upload artifact.
         with:
