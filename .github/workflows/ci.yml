@@ -57,10 +57,13 @@ jobs:
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
           DESKTOPBOT_TOKEN: ${{ secrets.DESKTOPBOT_TOKEN }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-      - name: List artifacts
-        run: ls -l dist/GitLab\ \(wrk\)-darwin-x64/GitLab (wrk).app
+      - name: Move artifact.
+        run: |
+          cd dist/GitLab\ \(wrk\)-darwin-x64
+          mkdir artifact
+          mv Gitlab\ \(wrk\).app artifact/
       - uses: actions/upload-artifact@v2
         name: Upload artifact.
         with:
           name: Gitlab (wrk).app
-          path: dist/GitLab\ \(wrk\)-darwin-x64/
+          path: dist/GitLab\ \(wrk\)-darwin-x64/artifact/
