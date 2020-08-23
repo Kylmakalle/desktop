@@ -21,6 +21,9 @@ jobs:
             friendlyName: macOS
     timeout-minutes: 40
     steps:
+      - name: Get repository name.
+        run: echo ::set-env name=REPO_NAME::${GITHUB_REPOSITORY##*/}
+
       - uses: actions/checkout@v2
         with:
           submodules: recursive
@@ -58,4 +61,4 @@ jobs:
         name: Upload artifact.
         with:
           name: Gitlab (wrk).app
-          path: ${{ env.REPO_NAME }}/dist/GitLab (wrk)-darwin-x64/
+          path: ${{ env.REPO_NAME }}/dist/GitLab\ (wrk)-darwin-x64/
