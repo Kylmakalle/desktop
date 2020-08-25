@@ -23,7 +23,7 @@ import memoizeOne from 'memoize-one'
 
 const BlankSlateImage = encodePathAsUrl(__dirname, 'static/empty-no-repo.svg')
 
-const recentRepositoriesThreshold = 7
+const recentRepositoriesThreshold = 20
 
 interface IRepositoriesListProps {
   readonly selectedRepository: Repositoryish | null
