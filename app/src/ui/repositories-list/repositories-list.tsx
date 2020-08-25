@@ -96,7 +96,7 @@ function findMatchingListItem(
 export class RepositoriesList extends React.Component<
   IRepositoriesListProps,
   {}
-  > {
+> {
   /**
    * A memoized function for grouping repositories for display
    * in the FilterList. The group will not be recomputed as long
@@ -190,7 +190,16 @@ export class RepositoriesList extends React.Component<
     )
 
     const groups =
-      baseGroups
+      this.props.repositories.length > recentRepositoriesThreshold
+        ? [
+            makeRecentRepositoriesGroup(
+              this.props.recentRepositories,
+              this.props.repositories,
+              this.props.localRepositoryStateLookup
+            ),
+            ...baseGroups,
+          ]
+        : baseGroups
 
     return (
       <div className="repository-list">
